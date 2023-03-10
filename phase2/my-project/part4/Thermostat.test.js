@@ -26,4 +26,10 @@ describe("thermostat", () => {
     }
     expect(thermostat.getTemperature()).toBe(25);
   });
+
+  it("(5) temp can exceed 25 when power save mode is off", () => {
+    thermostat.setPowerSavingMode(false);
+    thermostat.up();
+    expect(thermostat.getTemperature()).toBe(26);
+  });
 });
