@@ -15,8 +15,10 @@ class Thermostat {
   down() {
     this.temp--;
   }
-  setPowerSavingMode() {
-    return true;
+  setPowerSavingMode(boolean) {
+    if (boolean !== false) {
+      return true;
+    }
   }
 }
 
