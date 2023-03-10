@@ -13,4 +13,9 @@ describe("thermostat", () => {
     thermostat.up();
     expect(thermostat.getTemperature()).toBe(22);
   });
+
+  it("(3)thermostat.down minus's 1 from temp", () => {
+    thermostat.down();
+    expect(thermostat.getTemperature()).toBe(21);
+  });
 });
