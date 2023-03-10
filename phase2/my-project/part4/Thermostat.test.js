@@ -18,4 +18,12 @@ describe("thermostat", () => {
     thermostat.down();
     expect(thermostat.getTemperature()).toBe(21);
   });
+
+  it("(4) temp cannot exceed 25 if power save mode is on(default)", () => {
+    thermostat.setPowerSavingMode(true);
+    for (let i = 0; i < 10; i++) {
+      thermostat.up();
+    }
+    expect(thermostat.getTemperature()).toBe(25);
+  });
 });

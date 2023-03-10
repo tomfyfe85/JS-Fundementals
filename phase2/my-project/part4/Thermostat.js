@@ -3,13 +3,20 @@ class Thermostat {
     this.temp = 20;
   }
   getTemperature() {
-    return this.temp;
+    if (this.setPowerSavingMode(true) && this.temp > 25) {
+      return (this.temp = 25);
+    } else {
+      return this.temp;
+    }
   }
   up() {
     this.temp++;
   }
   down() {
     this.temp--;
+  }
+  setPowerSavingMode() {
+    return true;
   }
 }
 
