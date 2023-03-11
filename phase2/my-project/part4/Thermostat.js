@@ -3,6 +3,7 @@ class Thermostat {
     this.temp = 20;
     this.powerSavingMode = true;
   }
+
   getTemperature() {
     return this.temp;
   }
@@ -17,8 +18,25 @@ class Thermostat {
   down() {
     this.temp--;
   }
+
   setPowerSavingMode(mode) {
     this.powerSavingMode = mode;
+  }
+
+  reset() {
+    this.temp = 20;
+  }
+
+  currentEnergyUsage() {
+    let usage = "";
+    if (this.temp < 18) {
+      usage = "low-usage";
+    } else if (this.temp > 18 && this.temp <= 25) {
+      usage = "medium-usage";
+    } else {
+      usage = "high-usage";
+    }
+    return usage;
   }
 }
 
