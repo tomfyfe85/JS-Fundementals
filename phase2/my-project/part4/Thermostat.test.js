@@ -24,10 +24,11 @@ describe("thermostat", () => {
     for (let i = 0; i < 10; i++) {
       thermostat.up();
     }
+    
     expect(thermostat.getTemperature()).toBe(25);
   });
 
-  xit("(5) temp can exceed 25 when power save mode is off", () => {
+  it("(5) temp can exceed 25 when power save mode is off", () => {
     thermostat.setPowerSavingMode(false);
     thermostat.up();
     expect(thermostat.getTemperature()).toBe(26);
